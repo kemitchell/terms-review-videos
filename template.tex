@@ -1,0 +1,65 @@
+\documentclass[12pt]{memoir}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\hyphenation{}
+
+\makeevenfoot{plain}{}{\small \thepage\ of \thelastpage}{}
+\makeoddfoot{plain}{}{\small \thepage\ of \thelastpage}{}
+\pagestyle{plain}
+
+%\newcommand{\href}[2]{#1}
+
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setsecnumdepth{none}
+\maxsecnumdepth{none}
+
+\setstocksize{11in}{8.5in}
+\settrimmedsize{11in}{8.5in}{*}
+\settrims{0pt}{0pt}
+\settypeblocksize{7in}{4.5in}{*}
+\setlrmargins{2in}{*}{*}
+\setulmargins{2in}{*}{*}
+\setheadfoot{10pt}{1in}
+\setheaderspaces{20pt}{*}{*}
+\checkandfixthelayout%
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt}
+\renewcommand{\baselinestretch}{1.37}
+
+\setromanfont[
+	SmallCapsFont={Equity Caps A},
+	UprightFont={Equity Text A},
+	BoldFont={Equity Text A Bold},
+	ItalicFont={Equity Text A Italic},
+	BoldItalicFont={Equity Text A Bold Italic}]{Equity Text A}
+
+$if(title)$
+\title{$title$}
+$endif$
+
+$if(author)$
+\author{$author$}
+$endif$
+
+$if(date)$
+\date{$date$}
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+\maketitle
+
+$body$
+
+\end{document}
